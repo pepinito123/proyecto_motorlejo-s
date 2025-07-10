@@ -520,3 +520,244 @@ footer {
     left: -2px;
   }
 }
+
+/* Ocultar inicialmente las secciones */
+.oculto {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Mostrar cuando se revela */
+.revelado {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mensaje-flotante {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #00b2ff;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 178, 255, 0.4);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 9999;
+  font-size: 1rem;
+}
+
+.mensaje-flotante.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =======================
+   TESTIMONIOS
+========================== */
+
+.testimonio {
+  background: linear-gradient(135deg, #0a0f2e, #001c36);
+  border-left: 5px solid #0078ff;
+  padding: 25px 30px;
+  margin-bottom: 25px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.15);
+  color: #e6f7ff;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 178, 255, 0.4);
+}
+
+.testimonio blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin: 0;
+  position: relative;
+}
+
+.testimonio blockquote p {
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.testimonio blockquote p::before {
+  content: "“";
+  font-size: 3rem;
+  color: #00b2ff;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  opacity: 0.3;
+}
+
+.testimonio cite {
+  display: block;
+  text-align: right;
+  font-size: 0.95rem;
+  color: #aadfff;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* TESTIMONIO DESTACADO - .arc */
+.testimonio.arc {
+  background: linear-gradient(135deg, #002040, #003366);
+  border-left: 6px solid #00b2ff;
+  box-shadow: 0 0 30px rgba(0, 178, 255, 0.4);
+}
+
+.testimonio.arc blockquote p::before {
+  color: #00caff;
+  opacity: 0.5;
+}
+
+/* =======================
+   ENTRADAS DE BLOG
+========================== */
+
+.entrada {
+  background: linear-gradient(160deg, #0b1126, #011628);
+  border-left: 4px solid #0078ff;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  color: #dff6ff;
+  box-shadow: 0 0 18px rgba(0, 123, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.entrada:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 28px rgba(0, 123, 255, 0.3);
+}
+
+.entrada h3 {
+  font-size: 1.6rem;
+  color: #00b2ff;
+  margin-bottom: 12px;
+  text-shadow: 1px 1px 4px black;
+}
+
+.entrada p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #cceeff;
+  text-align: justify;
+}
+
+/* ENTRADA DESTACADA - .arcc */
+.entrada.arcc {
+  background: linear-gradient(to right, #001b33, #00294d);
+  border-left: 5px solid #00c3ff;
+  box-shadow: 0 0 25px rgba(0, 178, 255, 0.35);
+}
+
+.entrada.arcc h3 {
+  color: #00d5ff;
+}
+
+.imagen-seccion {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 40px;
+  padding: 0 15px;
+}
+
+.imagen-seccion img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 2px solid rgba(0, 174, 255, 0.2);
+}
+
+.imagen-seccion img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 40px rgba(0, 174, 255, 0.4);
+}
+
+
+/* Contenedor horizontal para imagen y tarjetas */
+.contenedor-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Imagen alineada al lado */
+.imagen-seccion {
+  flex: 1 1 320px;
+  max-width: 400px;
+}
+
+.imagen-seccion img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.25);
+  border: 2px solid rgba(0, 174, 255, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.imagen-seccion img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 40px rgba(0, 174, 255, 0.4);
+}
+
+/* Tarjetas de testimonios al lado */
+.contenedor-testimonios {
+  flex: 2 1 600px;
+}
+
+.tarjetas-testimonios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* Tarjeta individual */
+.tarjeta-testimonio {
+  background: linear-gradient(135deg, #0a0f2e, #001c36);
+  border-left: 5px solid #0078ff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.15);
+  color: #e6f7ff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-testimonio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 178, 255, 0.4);
+}
+
+.texto-testimonio {
+  font-style: italic;
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.autor-testimonio {
+  text-align: right;
+  font-size: 0.95rem;
+  color: #aadfff;
+  font-weight: bold;
+}
